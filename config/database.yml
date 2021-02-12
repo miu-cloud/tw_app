@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+development:
+  <<: *default
+  database: tw_app_development
+test:
+  <<: *default
+  database: tw_app_test
+production:
+  <<: *default
+  database: tw_app_production
+  username: tw_app
+  password: <%= ENV['TW_APP_DATABASE_PASSWORD'] %>
