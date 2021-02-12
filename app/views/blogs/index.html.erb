@@ -1,5 +1,4 @@
 <h1>ツイート一覧</h1>
-<%= @blogs %>
 <table>
   <tr>
     <th>内容</th>
@@ -9,7 +8,9 @@
     <td><%= blog.content %></td>
     <td><%= link_to '詳細を確認する',blog_path(blog.id) %></td>
     <td><%= link_to 'ツイートを編集する',edit_blog_path(blog.id) %></td>
+    <td><%= link_to 'ツイートを削除する', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
 <%= link_to '新しくツイートを投稿する', new_blog_path %>
+
