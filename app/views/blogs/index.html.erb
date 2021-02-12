@@ -1,2 +1,13 @@
 <h1>ツイート一覧</h1>
 <%= @blogs%>
+<table>
+  <tr>
+    <th>内容</th>
+  </tr>
+<% @blogs.each do |blog| %>
+  <tr>
+    <td><%= blog.content %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '新しくブログを投稿する', new_blog_path %>
