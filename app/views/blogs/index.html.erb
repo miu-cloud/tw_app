@@ -1,5 +1,5 @@
 <h1>ツイート一覧</h1>
-<%= @blogs%>
+<%= @blogs %>
 <table>
   <tr>
     <th>内容</th>
@@ -7,7 +7,8 @@
 <% @blogs.each do |blog| %>
   <tr>
     <td><%= blog.content %></td>
+    <td><%= link_to '詳細を確認する',blog_path(blog.id) %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to '新しくブログを投稿する', new_blog_path %>
+<%= link_to '新しくツイートを投稿する', new_blog_path %>
