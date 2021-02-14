@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
   def create
     @blog= Blog.new(blog_params)
     if params[:back]
-      render new
+      render :new
     else
       if @blog.save
        redirect_to blogs_path, notice: "ツイートを作成しました！"

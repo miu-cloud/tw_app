@@ -9,10 +9,13 @@
       </ul>
     </div>
   <% end %>
-  <div class="blog_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <div class="top">
+    <div class="title">
+      <%= form.label :content, :class=>"content_font" %>
+      <%= form.text_field :content %>
+      　<p><%= form.submit "ツイート", :class=>"btn"%>
+      　　<%= link_to "ツイート一覧画面へ", blogs_path,:class=>"btn_link"%>
+      　</p>
+    </div>
   </div>
-  <%= form.submit %>
-<% end %>
-<%= link_to "ツイート一覧画面にもどる", blogs_path %>
+  <% end %>
